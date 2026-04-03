@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Profile - Details</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CORRECTED LINK: Use main style.css -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <!-- Use dashboard header structure for consistency -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <!-- Back link to the dashboard -->
+            <a href="dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+        <div class="header-right">
+            <span class="project-title">Donor Profile</span>
+        </div>
+    </header>
+
+    <main class="profile-page-main">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image-section">
+                    <!-- Replaced profile image with the main section title per request -->
+                    <h2 class="section-title profile-badge-title">Personal Information</h2>
+                </div>
+                <!-- Button for editing the profile -->
+                <button class="edit-btn" id="editBtn">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+            </div>
+
+            <!-- Title moved up into the profile image area -->
+            <div class="profile-info">
+                <!-- Data will be populated by script.js -->
+                <div class="info-pair"><label>Name:</label> <span id="reg-name"></span></div>
+                <div class="info-pair"><label>Age:</label> <span id="reg-age"></span></div>
+                <div class="info-pair"><label>Blood Group:</label> <span id="reg-blood"></span></div>
+                <div class="info-pair"><label>Contact:</label> <span id="reg-phone"></span></div>
+                <div class="info-pair"><label>Username:</label> <span id="reg-username"></span></div>
+                <div class="info-pair"><label>Email:</label> <span id="reg-email"></span></div>
+                <div class="info-pair"><label>State:</label> <span id="reg-state"></span></div>
+                <div class="info-pair full-width"><label>Address:</label> <span id="donorAddress">Loading...</span></div>
+                <!-- Last donation displayed like other profile fields -->
+                <div class="info-pair"><label>Last Donation Date:</label> <span id="reg-last-donation-display"></span></div>
+                <div class="info-pair"><label>Registration Type:</label> <span id="reg-registration_type"></span></div>
+                
+                <!-- Hidden elements for address components needed during edit/save -->
+                <span id="reg-district" style="display:none;"></span>
+                <span id="reg-state-hidden" style="display:none;"></span>
+                <span id="reg-city" style="display:none;"></span>
+                <span id="reg-area" style="display:none;"></span>
+                <span id="reg-pincode" style="display:none;"></span>
+            </div>
+            
+            <div class="stats-section">
+                <!-- Availability Toggle -->
+                <div class="availability-toggle">
+                    <label>Available for donation:</label>
+                    <!-- Status is set by JS with appropriate classes -->
+                    <button id="toggleAvailabilityBtn" class="availability-btn">
+                        <i class="fas fa-spinner fa-spin"></i> Loading...
+                    </button>
+                </div>
+                
+                <!-- Last Donation Date -->
+                <div class="last-donation-input">
+                    <label for="lastDonation">Last Donation Date:</label>
+                    <input type="date" id="lastDonation" class="date-input">
+                </div>
+            </div>
+
+            <div class="donation-history">
+                <h3 class="section-title">Donation History</h3>
+                <!-- Table container for scrolling -->
+                <div class="table-scroll-container"> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Blood Group</th>
+                                <!-- CORRECTION: Added 'Location' column -->
+                                <th>Location</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="historyTable">
+    
+                        </tbody>
+                    </table>
+                </div>
+                <button class="add-donation-btn" id="addDonationBtn">
+                    <i class="fas fa-plus-circle"></i> Add New Record
+                </button>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="donor-prof.js"></script>
+</body>
+</html>

@@ -1,0 +1,1590 @@
+/* Color Palette */
+
+:root {
+    --color-primary: #e74c3c;
+    /* Bright Red */
+    --color-secondary: #c0392b;
+    /* Darker Red */
+    --color-background: #ffffff;
+    /* Clean White */
+    --color-dark-text: #2c3e50;
+    /* Dark Blue/Gray for text */
+    --color-light-gray: #f7f9fc;
+    /* Very light gray for full page background and accents */
+    --color-border: #ddd;
+}
+
+/* Base and Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-dark-text);
+}
+
+/* -------------------------------------- */
+
+/* --- 1. SPLASH SCREEN STYLES (index.html) --- */
+
+/* -------------------------------------- */
+
+.splash-screen {
+    /* Full viewport coverage, fixed position over all content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Top Right Navigation */
+
+.splash-nav {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Common button look */
+
+/* --- Splash Navigation Buttons (Login & Register) --- */
+
+.splash-nav {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Common button look */
+
+.btn-splash-nav {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 2px solid var(--color-primary);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Hover effect — darker red shade */
+
+.btn-splash-nav:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Hover Glow Effect for "Alive but Simple" */
+
+.btn-splash-nav:hover {
+    color: var(--color-primary);
+    background-color: #fcebeb;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+    transform: translateY(-2px);
+}
+
+.splash-content {
+    max-width: 500px;
+    padding: 40px;
+}
+
+.project-title {
+    font-size: 2.8rem;
+    /* Adjusted size for single line */
+    color: var(--color-primary);
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.project-logo-icon {
+    font-size: 4rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.clg-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-text);
+}
+
+/* Primary Button Styling (Used on Splash and Forms) */
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-1px);
+}
+
+/* -------------------------------------- */
+
+/* --- 2. AUTH PAGE STYLES (login.html & register.html) --- */
+
+/* -------------------------------------- */
+
+.auth-page {
+    /* Full Page View */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: var(--color-light-gray);
+    /* Light gray for the page background */
+}
+
+.auth-header {
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    /* ADD TOP PADDING TO CREATE SPACE ABOVE THE TITLE */
+    padding-top: 35px;
+    /* Increased padding to give ample room */
+    padding-bottom: 5px;
+}
+
+/* Inside @media (max-width: 600px) */
+
+.back-link {
+    /* Absolute positioning relative to the .auth-header */
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    /* Puts it 5px down from the top edge */
+    color: var(--color-dark-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    /* Ensure it doesn't get pushed by other elements */
+    z-index: 10;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+/* Ensure the auth-header has the same top spacing on mobile */
+
+.auth-header {
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.auth-logo {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    /* Remove manual padding settings */
+    padding: 0;
+}
+
+/* Form Container (White on White theme) */
+
+.auth-container {
+    background-color: var(--color-background);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for definition */
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.auth-form h2 {
+    font-size: 1.8rem;
+    color: var(--color-dark-text);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-form h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+/* Grid for Registration (2 columns) */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Donor card styling for register page (keeps other styles unchanged) */
+.donor-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.donor-card .card-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.donor-card .card-header i {
+    font-size: 28px;
+    color: var(--color-primary);
+}
+.donor-card .card-title h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+.donor-card .card-sub {
+    margin: 2px 0 0 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+.donor-card .muted {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Login specific styles */
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.auth-submit-btn {
+    margin-top: 15px;
+    max-width: none;
+    /* Make button fill the width of the container */
+}
+
+.switch-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.switch-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Social Login */
+
+.social-login {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-social {
+    background: var(--color-background);
+    color: var(--color-dark-text);
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-social:hover {
+    background-color: var(--color-light-gray);
+}
+
+.btn-social i {
+    margin-right: 8px;
+    color: var(--color-primary);
+    /* Keeps the icon the primary red color */
+}
+
+.divider {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 15px 0;
+}
+
+/* -------------------------------------- */
+/* --- REGISTRATION TYPE STYLES (NEW) --- */
+/* -------------------------------------- */
+
+/* Registration Type Selection */
+.registration-type-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+}
+
+.registration-type-section h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+.registration-type-options {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.type-option {
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+}
+
+.type-option input[type="radio"] {
+    display: none;
+}
+
+.type-option label {
+    display: block;
+    padding: 12px 15px;
+    background-color: white;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.type-option label:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.type-option input[type="radio"]:checked + label {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.type-option label i {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.type-description {
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #2c3e50;
+    display: none;
+}
+
+.type-description.active {
+    display: block;
+}
+
+/* Donor and Recipient Specific Fields */
+.donor-specific-fields,
+.recipient-specific-fields {
+    display: none;
+}
+
+.donor-specific-fields.active,
+.recipient-specific-fields.active {
+    display: block;
+}
+
+/* -------------------------------------- */
+/* --- 3. REGISTRATION TYPE STYLES (register.html) --- */
+/* -------------------------------------- */
+
+/* Registration Type Selection */
+.registration-type-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+}
+
+.registration-type-section h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+.registration-type-options {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.type-option {
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+}
+
+.type-option input[type="radio"] {
+    display: none;
+}
+
+.type-option label {
+    display: block;
+    padding: 12px 15px;
+    background-color: white;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.type-option label:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.type-option input[type="radio"]:checked + label {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.type-option label i {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.type-description {
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #2c3e50;
+    display: none;
+}
+
+.type-description.active {
+    display: block;
+}
+
+/* Donor and Recipient Specific Fields */
+.donor-specific-fields,
+.recipient-specific-fields {
+    display: none;
+}
+
+.donor-specific-fields.active,
+.recipient-specific-fields.active {
+    display: block;
+}
+
+/* -------------------------------------- */
+
+/* --- Mobile Responsiveness --- */
+
+/* -------------------------------------- */
+
+@media (max-width: 600px) {
+    /* Splash Screen Adjustments */
+    .splash-nav {
+        top: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    .project-title {
+        font-size: 2rem;
+    }
+    /* Auth Page Adjustments */
+    .auth-container {
+        padding: 30px 20px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Stack columns on small screens */
+    }
+    /* Inside @media (max-width: 600px) */
+    .auth-header {
+        /* Apply the same top spacing on mobile */
+        padding-top: 35px;
+        padding-bottom: 5px;
+    }
+    .back-link {
+        /* Use the same absolute positioning for mobile */
+        top: 5px;
+        left: 5px;
+        transform: none;
+    }
+    .auth-logo {
+        padding: 0;
+        font-size: 1.8rem;
+    }
+    
+    /* Registration Type Mobile Adjustments (NEW) */
+    .registration-type-options {
+        flex-direction: column;
+    }
+    
+    .type-option {
+        max-width: 100%;
+    }
+
+    .type-option label {
+        padding: 15px;
+    }
+}
+
+/* -------------------------------------- */
+
+/* --- DASHBOARD STYLES (dashboard.html) --- */
+
+/* -------------------------------------- */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: linear-gradient(90deg, rgba(231,76,60,0.95), rgba(192,57,43,0.95));
+    color: #fff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    padding: 6px;
+}
+
+.dashboard-header .project-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff; /* only for header title */
+    letter-spacing: 1px;
+}
+
+/* Donor profile card used on dashboard */
+.profile-card {
+    width: 100%;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 6px;
+}
+.profile-card .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(231,76,60,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+.profile-card .name {
+    font-weight: 800;
+    color: var(--color-dark-text);
+    font-size: 1.05rem;
+}
+.profile-card .meta {
+    color: #666;
+    font-size: 0.95rem;
+}
+.profile-card .contact {
+    margin-top: 8px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Donor profile header and badge (replaces profile image) */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.profile-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+}
+
+.profile-image-section .profile-badge-title {
+    background: var(--color-primary);
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: 0 12px 30px rgba(231,76,60,0.12);
+    line-height: 1.1;
+}
+
+/* Modal styles for profile details */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+}
+.modal {
+    width: 92%;
+    max-width: 520px;
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 18px 48px rgba(44,62,80,0.2);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.modal-title { font-weight: 800; color: var(--color-dark-text); }
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #888;
+}
+.modal-body { padding-top: 8px; }
+.profile-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; align-items: center; }
+.profile-grid .left { display:flex; justify-content:center; }
+.profile-grid .right { display:flex; flex-direction:column; gap:6px; }
+.profile-row { font-weight:600; color:var(--color-dark-text); }
+.profile-sub { color:#666; font-weight:500; }
+
+.header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.dashboard-main {
+    padding: 30px 28px;
+    background-color: var(--color-light-gray);
+    min-height: calc(100vh - 170px);
+}
+
+.panels-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.panel {
+    background: var(--color-background);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(44,62,80,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    /* Ensure panels used as links don't show underlines */
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel i {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+}
+
+.panel h3 {
+    font-size: 1rem;
+    color: var(--color-dark-text);
+    font-weight: 700;
+}
+
+.panel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(44,62,80,0.08);
+}
+
+.dashboard-footer {
+    padding: 18px 28px;
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+    .panels-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 800px) {
+    .panels-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .panels-container { grid-template-columns: 1fr; }
+    .dashboard-header { padding: 14px 16px; }
+    .dashboard-main { padding: 18px 16px; }
+}
+
+/* -------------------------------------- */
+/* --- AVAILABILITY PANEL STYLES --- */
+/* -------------------------------------- */
+
+.availability-container {
+    padding: 30px 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--color-light-gray);
+    min-height: 100vh;
+}
+
+.availability-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.availability-header h1 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.availability-header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.back-to-dashboard {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.back-to-dashboard:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Statistics Cards */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 24px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(44,62,80,0.08);
+}
+
+.stat-card.donors {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-card.recipients {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-card.both {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.stat-card p {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(44,62,80,0.06);
+}
+
+.filter-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--color-dark-text);
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.filter-btn, .clear-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.filter-btn {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.clear-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Availability List */
+.availability-list {
+    display: grid;
+    gap: 18px;
+}
+
+.availability-card {
+    background-color: white;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(44,62,80,0.04);
+}
+
+.availability-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.15);
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.card-icon.donor {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.card-icon.recipient {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.card-icon.both {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.card-info {
+    display: grid;
+    gap: 8px;
+}
+
+.card-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-dark-text);
+}
+
+.card-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-item i {
+    color: var(--color-primary);
+}
+
+.blood-badge {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.type-badge.donor {
+    background-color: #ffe0e6;
+    color: #d63447;
+}
+
+.type-badge.recipient {
+    background-color: #d4f1f9;
+    color: #0984e3;
+}
+
+.type-badge.both {
+    background-color: #d5f4e6;
+    color: #00b894;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.contact-btn {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.contact-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.view-btn {
+    background-color: #f8f9fa;
+    color: var(--color-dark-text);
+    border: 1px solid var(--color-border);
+}
+
+.view-btn:hover {
+    background-color: #e9ecef;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.no-results i {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: #00b894;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #00b894;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Responsive Design for Availability Panel */
+@media (max-width: 768px) {
+    .availability-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .card-details {
+        justify-content: center;
+    }
+
+    .card-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------- */
+/* --- DONOR PROFILE PAGE STYLES --- */
+/* -------------------------------------- */
+
+.profile-page-main {
+    padding: 40px 20px;
+    background-color: var(--color-light-gray);
+    min-height: calc(100vh - 140px);
+}
+
+.profile-container {
+    width: 760px;
+    max-width: 95%;
+    margin: 20px auto;
+    background: var(--color-background);
+    border-radius: 10px;
+    padding: 26px;
+    box-shadow: 0 18px 40px rgba(44,62,80,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.profile-image-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-image-section img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 22px rgba(44,62,80,0.06);
+    border: 6px solid rgba(231,76,60,0.08);
+}
+
+#uploadPic {
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+.edit-btn {
+    background-color: var(--color-dark-text);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.edit-btn i { margin-right: 8px; }
+
+.section-title {
+    color: var(--color-primary);
+    font-size: 1.05rem;
+    margin: 18px 0 12px 0;
+    font-weight: 800;
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.info-pair {
+    background: #fbfcfd;
+    border: 1px solid var(--color-border);
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-pair label { font-size: 0.8rem; color: #c0392b; font-weight: 700; margin-bottom: 6px; }
+.info-pair span { font-weight: 600; color: #222; }
+.info-pair.full-width { grid-column: 1 / -1; }
+
+.stats-section { display:flex; gap:18px; align-items:center; margin-top: 14px; }
+.availability-toggle { flex: 1; }
+.last-donation-input { width: 240px; }
+
+.availability-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.availability-btn.available { background-color: #22c55e; }
+
+.date-input { padding: 8px 10px; border-radius: 6px; border: 1px solid var(--color-border); }
+
+.donation-history { margin-top: 22px; }
+.table-scroll-container { overflow: auto; border: 1px solid var(--color-border); border-radius: 6px; }
+.table-scroll-container table { width: 100%; border-collapse: collapse; }
+.table-scroll-container th, .table-scroll-container td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; text-align: left; }
+.table-scroll-container thead th { background: var(--color-primary); color: #fff; font-weight: 800; }
+
+.add-donation-btn {
+    margin-top: 12px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width: 800px) {
+    .profile-info { grid-template-columns: 1fr; }
+    .stats-section { flex-direction: column; align-items: stretch; }
+    .last-donation-input { width: 100%; }
+}
+
+
+
+
+
+
+/* --- AWARENESS CENTER STYLES (Add to the end of style.css) --- */
+
+/* --- GLOBAL STYLES (Adjusted for external use) --- */
+:root {
+    --color-primary: #dc3545; /* Red */
+    --color-secondary: #007bff; /* Blue */
+    --color-success: #28a745; /* Green */
+    --color-info: #17a2b8; /* Cyan */
+    --color-dark-text: #343a40;
+    --color-light-gray: #f8f9fa;
+}
+
+.dashboard-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+ 
+/* --- TABBED INTERFACE (CORE SINGLE-PAGE NAVIGATION) --- */
+.tab-controls {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    overflow-x: auto;
+}
+.tab-controls label {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    white-space: nowrap;
+}
+ 
+.tab-content-area input[type="radio"] {
+    display: none;
+}
+ 
+.tab-pane {
+    display: none;
+    padding-top: 20px;
+}
+ 
+/* Show the active tab and style the active label */
+#tab-dashboard:checked ~ .tab-controls label[for="tab-dashboard"],
+#tab-eligibility:checked ~ .tab-controls label[for="tab-eligibility"],
+#tab-benefits:checked ~ .tab-controls label[for="tab-benefits"],
+#tab-facts:checked ~ .tab-controls label[for="tab-facts"] {
+    background-color: white;
+    border-color: #ddd;
+    border-bottom: 2px solid white;
+    color: var(--color-primary);
+}
+
+#tab-dashboard:checked ~ .tab-pane-dashboard,
+#tab-eligibility:checked ~ .tab-pane-eligibility,
+#tab-benefits:checked ~ .tab-pane-benefits,
+#tab-facts:checked ~ .tab-pane-facts {
+    display: block;
+}
+
+/* --- Awareness Dashboard (Hub) Styles --- */
+.awareness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.awareness-hub-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-dark-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid transparent; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Important for label to act like a button */
+}
+.awareness-hub-card .card-icon { font-size: 3.5rem; margin-bottom: 15px; line-height: 1; }
+.eligibility-hub .card-icon { color: var(--color-success); }
+.benefits-hub .card-icon { color: var(--color-primary); }
+.facts-hub .card-icon { color: var(--color-secondary); }
+
+/* --- Sub-Page Card Base Styles --- */
+.awareness-card {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: white;
+    border-left: 5px solid #ccc;
+}
+.awareness-card h3 {
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+/* --------------------------------------------------------------------------
+    --- ELIGIBILITY STYLES (Detailed Grid) --- 
+    -------------------------------------------------------------------------- */
+.eligibility-page-card { border-left-color: var(--color-success); background-color: #e6ffe6; }
+
+.eligibility-diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.eligibility-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid var(--color-success);
+    text-align: center; 
+}
+.eligibility-box .icon { 
+    font-size: 2.5rem; 
+    color: var(--color-success); 
+    margin-bottom: 5px;
+}
+.eligibility-box h4 { font-size: 1.1rem; margin: 0; color: var(--color-success); }
+.eligibility-box p { font-size: 0.85em; margin: 5px 0 0; color: #6c757d; }
+
+.deferral-box {
+    background-color: #fff0f0; 
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+}
+.deferral-box h4 { margin-top: 0; color: var(--color-primary); }
+.deferral-box ul { padding-left: 20px; margin: 5px 0 0; font-size: 0.9em; line-height: 1.4; }
+ 
+/* --------------------------------------------------------------------------
+    --- BENEFITS STYLES (Infographic) --- 
+    -------------------------------------------------------------------------- */
+.benefits-page-card { border-left-color: var(--color-primary); background-color: #ffe6e6; }
+
+.benefits-infographic-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    margin-top: 20px;
+}
+.benefit-highlight { 
+    text-align: center; 
+    padding: 20px 10px; 
+    border-radius: 10px; 
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.benefit-highlight h4 { font-size: 1.1rem; margin: 5px 0 10px; color: var(--color-primary); }
+.icon-circle { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    line-height: 1; 
+    color: var(--color-primary);
+    background-color: #ffcccc; 
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.stat-large { font-size: 1.8rem; font-weight: bold; color: var(--color-primary); margin-top: 5px; }
+
+
+/* --------------------------------------------------------------------------
+    --- FACTS PAGE STYLES (Statistics) --- 
+    -------------------------------------------------------------------------- */
+.facts-page-card { border-left-color: var(--color-secondary); background-color: #e6f0ff; }
+.stat-card { text-align: center; background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.stat-value { font-size: 2rem; font-weight: bold; color: var(--color-primary); }
+.stat-label { font-size: 0.9em; color: #6c757d; }
+.chart-container { height: 350px; padding: 15px; background: white; border-radius: 8px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+
+
+@media (max-width: 900px) {
+    .eligibility-diagram-grid, .benefits-infographic-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .awareness-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+@media (max-width: 600px) {
+    .eligibility-diagram-grid, .benefits-infographic-grid { grid-template-columns: 1fr; }
+}

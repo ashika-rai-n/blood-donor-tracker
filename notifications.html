@@ -1,0 +1,31 @@
+<div class="notifications-panel" style="padding:20px;">
+  <h2>Notifications</h2>
+  <p id="notifications-status" style="color:#555;"></p>
+  <div style="margin-bottom:12px;">
+    <button id="notifications-refresh" class="btn-primary">Refresh</button>
+  </div>
+
+  <div id="notifications-list" style="display:block;">
+    <!-- Message rows will be inserted here -->
+  </div>
+
+  <template id="notification-row-template">
+    <div class="notification-row" style="padding:12px;border:1px solid #eee;border-radius:8px;margin-bottom:8px;display:flex;flex-direction:column;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <strong class="notif-donor-name"></strong>
+          <span class="notif-from" style="color:#666;margin-left:8px;"></span>
+        </div>
+        <div style="font-size:12px;color:#999;" class="notif-time"></div>
+      </div>
+      <div style="margin-top:8px;white-space:pre-wrap;" class="notif-body"></div>
+      <div style="margin-top:8px;color:#888;font-size:12px;">Direction: <span class="notif-direction"></span> • To: <span class="notif-to"></span></div>
+    </div>
+  </template>
+
+  <style>
+    .notification-row .notif-donor-name { color: #c0392b; }
+  </style>
+
+  <script src="notify.js"></script>
+</div>

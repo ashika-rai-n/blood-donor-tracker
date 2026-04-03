@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Tracker - Register</title>
+    <!-- Assuming style.css and register-styles.css contain the necessary styling -->
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="register-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Added simple inline style for the new checkbox/date layout -->
+    <style>
+        .input-group.donation-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between the label and the controls */
+        }
+        .donation-controls {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .checkbox-label input[type="checkbox"] {
+            /* Standard checkbox styling */
+            width: 16px;
+            height: 16px;
+        }
+        .last-donation-date-input {
+            margin-top: 10px; /* Space between checkbox and date input */
+        }
+        .hidden-field {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="auth-page">
+        <header class="auth-header">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <h1 class="auth-logo">Blood Donor Tracker</h1>
+        </header>
+
+        <div class="auth-container">
+            <form id="form-register" class="auth-form active-form">
+                <h2>Join the Donor Community</h2>
+
+                <!-- Registration Type Selection - Original Style -->
+                <div class="registration-type-section">
+                    <h3>I want to register as:</h3>
+                    <div class="registration-type-options">
+                        <div class="type-option">
+                            <input type="radio" id="type-donor" name="registration-type" value="donor" checked>
+                            <label for="type-donor">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                <span>Donor</span>
+                            </label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" id="type-recipient" name="registration-type" value="recipient">
+                            <label for="type-recipient">
+                                <i class="fa-solid fa-user-injured"></i>
+                                <span>Recipient</span>
+                            </label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" id="type-both" name="registration-type" value="both">
+                            <label for="type-both">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Both</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social login removed by request -->
+                <div class="divider">Please fill in details below</div>
+
+                <div class="form-section">
+                    <h3>Personal Details</h3>
+                    <div class="form-grid">
+                        <div class="input-group"><label for="reg-name">Full Name</label><input type="text" id="reg-name" required></div>
+                        <div class="input-group"><label for="reg-age">Age</label><input type="number" id="reg-age" min="16" max="120" required></div>
+                        
+                        <!-- BLOOD GROUP -->
+                        <div class="input-group">
+                            <label for="reg-blood-group">Blood Group</label>
+                            <select id="reg-blood-group" required>
+                                <option value="" disabled selected>Select Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group"><label for="reg-phone">Phone No</label><input type="tel" id="reg-phone" value="+91" required placeholder="+91XXXXXXXXXX" pattern="^\+91[6-9][0-9]{9}$" title="Enter Indian mobile number with country code, e.g. +919876543210" inputmode="tel" maxlength="13"></div>
+                    </div>
+                </div>
+
+                <!-- Donor-Specific Fields - Presentable Card; hides when Recipient is selected -->
+                <div class="donor-specific-fields active" id="donor-specific-fields">
+                    <div class="donor-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div class="card-title">
+                                <h3>Donor Information</h3>
+                                <p class="card-sub">These details help determine eligibility and give recipients context.</p>
+                            </div>
+                        </div>
+
+                        <div class="card-body form-grid">
+                            <div class="input-group">
+                                <label for="reg-weight">Weight (kg)</label>
+                                <input type="number" id="reg-weight" min="45" max="200" placeholder="Min 45kg">
+                                <small class="muted">Minimum recommended weight for donation is 45kg.</small>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="reg-last-donation">Last Donation Date</label>
+                                <input type="date" id="reg-last-donation">
+                                <small class="muted">Leave empty if you haven't donated before.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipient-Specific Fields - HIDES WHEN DONOR IS SELECTED -->
+                <div class="recipient-specific-fields hidden-field" id="recipient-specific-fields">
+                    <div class="form-section">
+                        <h3><i class="fa-solid fa-hospital-user"></i> Recipient Information</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="reg-emergency-contact">Emergency Contact</label>
+                                <input type="tel" id="reg-emergency-contact" value="+91" placeholder="+91XXXXXXXXXX" pattern="^\+91[6-9][0-9]{9}$" title="Enter Indian mobile number with country code, e.g. +919876543210" inputmode="tel" maxlength="13">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Location Details</h3>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="reg-state">State</label>
+                            <select id="reg-state" required>
+                                <option value="" disabled selected>Select State</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="reg-district">District</label>
+                            <select id="reg-district" required>
+                                <option value="" disabled selected>Select District</option>
+                                <option value="Dakshina Kannada">Dakshina Kannada</option>
+                                <option value="Udupi">Udupi</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="reg-city">City</label>
+                            <select id="reg-city" required>
+                                <option value="" disabled selected>Select City</option>
+                                <option value="Bantwal">Bantwal</option>
+                                <option value="Belthangady">Belthangady</option>
+                                <option value="Puttur">Puttur</option>
+                                <option value="Mangaluru">Mangaluru</option>
+                                <option value="Sullia">Sullia</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label for="reg-area">Area</label><input type="text" id="reg-area" required></div>
+                        <div class="input-group"><label for="reg-pincode">Pincode</label><input type="text" id="reg-pincode" required></div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Set Credentials</h3>
+                    <div class="form-grid">
+                        <div class="input-group"><label for="reg-username">Username</label><input type="text" id="reg-username" required></div>
+                        <div class="input-group"><label for="reg-password">Password</label><input type="password" id="reg-password" required></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary auth-submit-btn">Register Now</button>
+
+                <p class="switch-link">
+                    Already have an account? <a href="login.html">Login here</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Normalize and validate phone inputs to +91XXXXXXXXXX before form submit
+        (function(){
+            function normalizeToPlus91(value){
+                if(!value) return '';
+                const digits = value.replace(/\D/g, '');
+                const last10 = digits.slice(-10);
+                if(last10.length !== 10) return '';
+                return '+91' + last10;
+            }
+
+            function isValidIndianMobile(v){
+                return /^\+91[6-9][0-9]{9}$/.test(v);
+            }
+
+            const form = document.getElementById('form-register');
+            if(form){
+                form.addEventListener('submit', function(e){
+                    const phoneEl = document.getElementById('reg-phone');
+                    const emEl = document.getElementById('reg-emergency-contact');
+
+                    // Normalize main phone (required)
+                    if(phoneEl){
+                        const norm = normalizeToPlus91(phoneEl.value);
+                        if(!isValidIndianMobile(norm)){
+                            e.preventDefault();
+                            alert('Please enter a valid Indian mobile number for Phone (use +91 prefix or enter 10-digit mobile).');
+                            phoneEl.focus();
+                            return false;
+                        }
+                        phoneEl.value = norm;
+                    }
+
+                    // Normalize emergency contact if provided
+                    if(emEl && emEl.value && emEl.value.trim() !== ''){
+                        const norm2 = normalizeToPlus91(emEl.value);
+                        if(!isValidIndianMobile(norm2)){
+                            e.preventDefault();
+                            alert('Please enter a valid Indian mobile number for Emergency Contact (use +91 prefix or enter 10-digit mobile).');
+                            emEl.focus();
+                            return false;
+                        }
+                        emEl.value = norm2;
+                    }
+
+                    // allow submit to continue
+                });
+            }
+            // Keep +91 prefix in place and help with caret placement
+            function placeCaretToEnd(el){
+                try{
+                    const len = el.value.length;
+                    el.setSelectionRange(len, len);
+                }catch(err){ /* ignore */ }
+            }
+
+            const phoneEl = document.getElementById('reg-phone');
+            const emEl = document.getElementById('reg-emergency-contact');
+            [phoneEl, emEl].forEach(el => {
+                if(!el) return;
+                // ensure +91 exists on initial focus
+                el.addEventListener('focus', function(){
+                    if(!el.value || el.value.trim() === '') el.value = '+91';
+                    // place caret at end so user types after prefix
+                    setTimeout(() => placeCaretToEnd(el), 0);
+                });
+
+                // Prevent deleting the +91 prefix with backspace/delete when caret is at or before position 3
+                el.addEventListener('keydown', function(ev){
+                    try{
+                        const pos = el.selectionStart || 0;
+                        if((ev.key === 'Backspace' || ev.key === 'Delete') && pos <= 3){
+                            ev.preventDefault();
+                        }
+                    }catch(e){ }
+                });
+
+                // If user clears the field entirely, restore +91 on blur
+                el.addEventListener('blur', function(){
+                    if(!el.value || el.value.trim() === '') el.value = '+91';
+                });
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+    <script src="register-script.js"></script>
+</body>
+
+</html>

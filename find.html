@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Donor - Blood Donor Tracker</title>
+    <link rel="stylesheet" href="style.css"> <!-- Links to your main styles for consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- CSS styles kept for layout integrity -->
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f7f9fc; 
+            padding: 20px; 
+            min-height: 100vh;
+        }
+        .back-to-dashboard {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .back-to-dashboard:hover {
+            background-color: #c0392b;
+        }
+        .blood-type-group, fieldset { 
+            margin-bottom: 20px; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+        }
+        .location-details-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Use auto-fit for responsiveness */
+            gap: 15px; 
+        }
+        .form-group label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 5px; 
+        }
+        input[type="text"], select { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        .btn-search { 
+            padding: 12px 20px; 
+            background-color: #e74c3c; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 15px; 
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .btn-search:hover {
+            background-color: #c0392b;
+        }
+        #donor-results-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+        }
+        #donor-results-table th, #donor-results-table td { 
+            border: 1px solid #ddd; 
+            padding: 10px; 
+            text-align: left; 
+        }
+        #donor-results-table th { 
+            background-color: #e74c3c; 
+            color: white; 
+        }
+        #donor-results-table td .contact-link {
+            display: block;
+            color: #e74c3c;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        h1, h2 {
+            color: #e74c3c;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<a href="dashboard.html" class="back-to-dashboard">
+    <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+</a>
+
+<h1>🩸 Find a Blood Donor</h1>
+
+<section id="search-section">
+    <form id="donor-search-form">
+        
+        <div class="blood-type-group">
+            <label for="blood-type-filter">Select Blood Type (Required):</label>
+            <select id="blood-type-filter" name="blood-type" required>
+                <option value="" disabled selected>-- Select Type --</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>Location Details (Enter at least one location field)</legend>
+            <div class="location-details-grid"> 
+                <div class="form-group">
+                    <label for="pincode-filter">Pincode:</label>
+                    <input type="text" id="pincode-filter" name="pincode" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="area-filter">Area:</label>
+                    <input type="text" id="area-filter" name="area">
+                </div>
+                <div class="form-group">
+                    <label for="town-filter">City/Town:</label>
+                    <input type="text" id="town-filter" name="town">
+                </div>
+                <div class="form-group">
+                    <label for="district-filter">District:</label>
+                    <input type="text" id="district-filter" name="district">
+                </div>
+                <div class="form-group">
+                    <label for="state-filter">State:</label>
+                    <input type="text" id="state-filter" name="state">
+                </div>
+            </div>
+        </fieldset>
+        
+        <button type="submit" class="btn-search">
+            <i class="fa-solid fa-magnifying-glass"></i> Search Donors
+        </button>
+    </form>
+</section>
+
+<hr>
+
+<section id="results-section">
+    <h2>Matching Donors (Highest Priority First)</h2>
+    <table id="donor-results-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Blood Type</th>
+                <th>Location (Area, City, Pincode)</th>
+                <th>Last Donated</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody id="donor-results-body">
+            <tr>
+                <td colspan="5" style="text-align: center; color: #666;">Enter search criteria above and click Search.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="no-results-message" style="display:none; color: #c0392b; font-weight: bold; text-align: center;">
+        <i class="fas fa-exclamation-triangle"></i> No available donors found matching your criteria.
+    </p>
+</section>
+
+<script src="find.js"></script>
+
+</body>
+</html>

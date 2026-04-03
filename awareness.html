@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness Panel | Donor Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <main class="dashboard-main">
+        <div id="awareness-panel-content">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> Blood Donation Awareness Center</h2>
+            
+            <div class="tab-content-area">
+                <input type="radio" id="tab-dashboard" name="awareness_tabs" checked>
+                <input type="radio" id="tab-eligibility" name="awareness_tabs">
+                <input type="radio" id="tab-benefits" name="awareness_tabs">
+                <input type="radio" id="tab-facts" name="awareness_tabs">
+
+                <div class="tab-controls">
+                    <label for="tab-dashboard"><i class="fas fa-home"></i> Awareness Hub</label>
+                    <label for="tab-eligibility"><i class="fas fa-user-check"></i> Eligibility Criteria</label>
+                    <label for="tab-benefits"><i class="fas fa-heartbeat"></i> Donor Benefits</label>
+                    <label for="tab-facts"><i class="fas fa-chart-line"></i> Facts & Statistics</label>
+                </div>
+
+                <div class="tab-pane tab-pane-dashboard">
+                    <p>Navigate through detailed information about blood donation. Click a card below to learn more!</p>
+                    <div class="awareness-grid">
+                        
+                        <label for="tab-eligibility" class="awareness-hub-card eligibility-hub">
+                            <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                            <h3 class="card-title">Am I Eligible?</h3>
+                            <p class="card-desc">Understand donor requirements and health criteria.</p>
+                        </label>
+
+                        <label for="tab-benefits" class="awareness-hub-card benefits-hub">
+                            <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h3 class="card-title">Donor Benefits</h3>
+                            <p class="card-desc">Discover the positive impacts on your health and well-being.</p>
+                        </label>
+
+                        <label for="tab-facts" class="awareness-hub-card facts-hub">
+                            <div class="card-icon"><i class="fas fa-info-circle"></i></div>
+                            <h3 class="card-title">Quick Facts & Stats</h3>
+                            <p class="card-desc">Explore vital statistics and universal blood type information.</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tab-pane tab-pane-eligibility">
+                    <h2 class="section-title" style="color: var(--color-success);"><i class="fas fa-clipboard-check"></i> Eligibility Checklist (Must Meet ALL)</h2>
+                    <p>Before you donate, ensure you meet the essential requirements. Your safety and the recipient's safety are paramount. All criteria are checked at the donation center.</p>
+                    
+                    <div class="eligibility-diagram-grid">
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-user"></i></div>
+                            <h4>Age & Weight</h4>
+                            <p>Age 18 to 65 years | Min. 45 kg (110 lbs)</p>
+                        </div>
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                            <h4>General Health</h4>
+                            <p>Must be healthy, feel well, and free from cold/flu symptoms.</p>
+                        </div>
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-tint"></i></div>
+                            <h4>Hemoglobin (HB)</h4>
+                            <p>Women:  12.5 | Men:  13.0</p>
+                        </div>
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-clock"></i></div>
+                            <h4>Donation Interval</h4>
+                            <p>Women: 90days | Men: 60days</p>
+                        </div>
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-utensils"></i></div>
+                            <h4>Preparation</h4>
+                            <p>Must have eaten a meal and had plenty of fluids before arriving.</p>
+                        </div>
+                        <div class="eligibility-box">
+                            <div class="icon"><i class="fas fa-band-aid"></i></div>
+                            <h4>Recent Procedures</h4>
+                            <p>No new tattoos or piercings in the last 4 months.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="deferral-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> KEY DEFERRAL PERIODS & EXCLUSIONS</h4>
+                        <ul>
+                            <li>*Infection/Flu:* Must wait until symptoms are gone (typically *24 hours* to *1 week*).</li>
+                            <li>*Major Surgery/Childbirth:* Wait period usually *6 months*.</li>
+                            <li>*High-Risk Travel (e.g., Malaria):* Must wait *3 months* after returning from an endemic area.</li>
+                            <li>*Medication:* Deferral required for certain drugs (e.g., specific antibiotics or acne treatments).</li>
+                            <li>*Permanent Deferral:* For conditions like HIV, Hepatitis B/C, or uncontrolled severe cardiac disease.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-pane tab-pane-benefits">
+                    <h2 class="section-title" style="color: var(--color-primary);"><i class="fas fa-award"></i> The Rewards of Giving Blood</h2>
+                    <p>Donating is selfless—discover the surprising benefits to your own health and spirit.</p>
+
+                    <div class="benefits-infographic-grid">
+                        
+                        <section class="awareness-card benefits-page-card benefit-highlight">
+                            <div class="icon-circle"><i class="fas fa-heart-pulse"></i></div>
+                            <h4>Health Screening</h4>
+                            <p>Get a *free mini physical* (BP, pulse, temp, Hb levels).</p>
+                        </section>
+
+                        <section class="awareness-card benefits-page-card benefit-highlight">
+                            <div class="icon-circle"><i class="fas fa-fire-alt"></i></div>
+                            <h4>Calorie Burn</h4>
+                            <p>Burns approximately <span class="stat-large">650</span> calories per donation.</p>
+                        </section>
+
+                        <section class="awareness-card benefits-page-card benefit-highlight">
+                            <div class="icon-circle"><i class="fas fa-hands-holding"></i></div>
+                            <h4>Saves Lives</h4>
+                            <p>One donation can save up to <span class="stat-large">3</span> lives.</p>
+                        </section>
+
+                        <section class="awareness-card benefits-page-card benefit-highlight">
+                            <div class="icon-circle"><i class="fas fa-smile-beam"></i></div>
+                            <h4>Mood Boost</h4>
+                            <p>Powerful positive impact on *mental well-being*.</p>
+                        </section>
+                    </div>
+                    
+                    <div class="deferral-box" style="background-color: #f0f7ff; border-color: var(--color-secondary); color: var(--color-dark-text); margin-top: 20px;">
+                        <h4><i class="fas fa-trophy"></i> DONOR IMPACT</h4>
+                        <p style="margin: 0; font-size: 0.95em;">Blood components are critical for trauma, surgeries, chronic illnesses (like cancer), and childbirth. Every drop matters.</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane tab-pane-facts">
+                    <h2 class="section-title" style="color: var(--color-secondary);"><i class="fas fa-chart-line"></i> Blood Facts & Global Statistics</h2>
+                    <p>Delve into intriguing facts and important statistics about blood and its critical role.</p>
+
+                    <div class="stats-grid">
+                        <section class="awareness-card facts-page-card stat-card">
+                            <div class="stat-value" style="color: var(--color-primary);">Every 2 Seconds</div>
+                            <p class="stat-label"><i class="fas fa-hourglass-half"></i> Someone needs blood.</p>
+                        </section>
+
+                        <section class="awareness-card facts-page-card stat-card">
+                            <div class="stat-value" style="color: var(--color-info);">470 mL</div>
+                            <p class="stat-label"><i class="fas fa-tint"></i> Typical volume for one whole blood donation.</p>
+                        </section>
+
+                        <section class="awareness-card facts-page-card stat-card">
+                            <div class="stat-value" style="color: var(--color-success);">O−</div>
+                            <p class="stat-label"><i class="fas fa-star"></i> Universal donor (can donate to all blood types).</p>
+                        </section>
+
+                        <section class="awareness-card facts-page-card stat-card">
+                            <div class="stat-value" style="color: var(--color-secondary);">AB+</div>
+                            <p class="stat-label"><i class="fas fa-users"></i> Universal recipient (can receive from all blood types).</p>
+                        </section>
+                    </div>
+
+                    <section class="awareness-card chart-card facts-page-card">
+                        <h3><i class="fas fa-chart-pie"></i> Estimated Blood Type Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="bloodTypePieChart"></canvas>
+                        </div>
+                        <p class="chart-caption">Global averages for blood group distribution. Percentages vary by population and region.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>
+        // Render a simple pie chart for blood type distribution using Chart.js
+        (function(){
+            const ctx = document.getElementById('bloodTypePieChart');
+            if(!ctx) return;
+            const data = {
+                labels: ['O+','A+','B+','O-','A-','AB+','B-','AB-'],
+                datasets: [{
+                    data: [37, 27, 22, 5, 4, 3, 1, 1],
+                    backgroundColor: ['#ff6384','#36a2eb','#ffcd56','#4bc0c0','#9966ff','#c9cbcf','#f67019','#9ad0f5']
+                }]
+            };
+            new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'right' } }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Tracker - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <main class="auth-page">
+        <header class="auth-header">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <h1 class="auth-logo">Blood Donor Tracker</h1>
+        </header>
+
+        <div class="auth-container">
+            <form id="form-login" class="auth-form active-form">
+                <h2>Welcome Back!</h2>
+
+                <div class="input-group">
+                    <label for="login-email">Email or Username</label>
+                    <input type="text" id="login-email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+
+                <a href="#" class="forgot-password">Forgot Password?</a>
+
+                <button type="submit" class="btn-primary auth-submit-btn">Login</button>
+
+                <p class="switch-link">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+            </form>
+        </div>
+    </main>
+    <!-- IMPORTANT: This line links the client-side login logic -->
+    <script src="auth.js"></script>
+</body>
+
+</html>

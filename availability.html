@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Availability - Blood Donor Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="availability-container">
+        <a href="dashboard.html" class="back-to-dashboard">
+            <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+        </a>
+
+        <div class="availability-header">
+            <h1><i class="fa-solid fa-list-check"></i> Blood Availability Status</h1>
+            <p>View all registered donors, recipients, and their availability status</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-container">
+            <div class="stat-card donors">
+                <h3 id="donor-count">0</h3>
+                <p><i class="fa-solid fa-hand-holding-heart"></i> Donors Available</p>
+            </div>
+            <div class="stat-card recipients">
+                <h3 id="recipient-count">0</h3>
+                <p><i class="fa-solid fa-user-injured"></i> Recipients</p>
+            </div>
+            <div class="stat-card both">
+                <h3 id="both-count">0</h3>
+                <p><i class="fa-solid fa-users"></i> Both (Donor + Recipient)</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="total-count">0</h3>
+                <p><i class="fa-solid fa-user-group"></i> Total Registered</p>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="filter-type">Registration Type</label>
+                    <select id="filter-type">
+                        <option value="all">All Types</option>
+                        <option value="donor">Donor Only</option>
+                        <option value="recipient">Recipient Only</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-blood">Blood Group</label>
+                    <select id="filter-blood">
+                        <option value="all">All Blood Groups</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-city">City</label>
+                    <select id="filter-city">
+                        <option value="all">All Cities</option>
+                        <option value="Bantwal">Bantwal</option>
+                        <option value="Belthangady">Belthangady</option>
+                        <option value="Puttur">Puttur</option>
+                        <option value="Mangaluru">Mangaluru</option>
+                        <option value="Sullia">Sullia</option>
+                    </select>
+                </div>
+                <button class="filter-btn" onclick="applyFilters()">
+                    <i class="fa-solid fa-filter"></i> Apply Filters
+                </button>
+                <button class="clear-btn" onclick="clearFilters()">
+                    <i class="fa-solid fa-rotate-left"></i> Clear
+                </button>
+            </div>
+        </div>
+
+        <!-- Availability List -->
+        <div id="availability-list" class="availability-list">
+            <!-- Cards will be dynamically added here by script.js -->
+        </div>
+
+        <div id="no-results" class="no-results" style="display: none;">
+            <i class="fa-solid fa-inbox"></i>
+            <h3>No Results Found</h3>
+            <p>Try adjusting your filters to see more results.</p>
+        </div>
+    </div>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Blood Donor Tracker. All rights reserved.</p>
+        <p>Contact: +91-XXXXXXXXXX | Email: info@blooddonortracker.com</p>
+        <p>Designed & Developed for Real-Time Emergency Response</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="availability.js"></script>
+</body>
+</html>

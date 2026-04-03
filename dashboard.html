@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Tracker - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <i class="fa-solid fa-droplet project-logo-icon"></i>
+            <span class="project-title">Blood Donor Tracker</span>
+        </div>
+        <div class="header-right">
+            <button id="about-btn" class="btn-primary">About Us</button>
+            <button id="logout-btn" class="btn-primary">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Panels -->
+    <main class="dashboard-main">
+        <div class="panels-container">
+            <!-- CORRECTION: Changed to <a> tag to link directly to the donor-profile page -->
+            <a href="donor-prof.html" class="panel" id="panel-donor-profile">
+                <i class="fa-solid fa-user"></i>
+                <h3>Donor Profile</h3>
+            </a>
+
+            <!-- Make Find Donor behave like Donor Profile (navigate to find.html) -->
+            <a href="find.html" class="panel" id="panel-find-donor">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Find Donor</h3>
+            </a>
+
+            <a href="availability.html" class="panel" id="panel-blood-availability">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <h3>Blood Availability</h3>
+            </a>
+
+            <a href="blood-request.html" class="panel" id="panel-blood-request">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h3>Blood Request</h3>
+            </a>
+            
+            <a href="notifications.html" class="panel" id="panel-notifications">
+                <i class="fa-solid fa-inbox"></i>
+                <h3>Notifications</h3>
+            </a>
+
+            <a href="awareness.html" class="panel" id="panel-awareness">
+                <i class="fa-solid fa-book"></i>
+                <h3>Awareness Panel</h3>
+            </a>
+        </div>
+    </main>
+          <!-- Panel Content Sections -->
+    <section class="panel-content" id="content-donor-profile">
+        <!-- Donor Profile Content will appear here via JS -->
+    </section>
+
+    <section class="panel-content" id="content-find-donor">
+        <!-- Find Donor Content will appear here via JS -->
+    </section>
+
+    <section class="panel-content" id="content-blood-availability">
+        <!-- Blood Availability Content will appear here via JS -->
+    </section>
+
+    <section class="panel-content" id="content-blood-request">
+        <!-- Blood Request Content will appear here via JS -->
+    </section>
+
+    <section class="panel-content" id="content-notifications">
+        <!-- Notifications Content will appear here via JS -->
+    </section>
+
+    <section class="panel-content" id="content-awareness">
+        <!-- Awareness Content will appear here via JS -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Blood Donor Tracker. All rights reserved.</p>
+        <p>Contact: +91-XXXXXXXXXX | Email: info@blooddonortracker.com</p>
+        <p>Designed & Developed for Real-Time Response.</p>
+    </footer>
+
+   <script src="dashboard.js"></script>
+</body>
+
+</html>
