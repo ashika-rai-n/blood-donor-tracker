@@ -13,6 +13,16 @@ A web-based application to find and manage blood donors efficiently.
 
 ---
 
+## 🌐 Live Demo
+
+🔗 https://ashika-rai-n.github.io/blood-donor-tracker/
+
+> ⚠️ Note:
+> This project is deployed using GitHub Pages, which supports only static files (HTML, CSS, JavaScript).
+> Backend features like login, registration, and database connectivity require running the server locally.
+
+---
+
 ## 🛠️ Technologies Used
 
 * HTML
@@ -75,7 +85,7 @@ node server.js
 
 ### 5️⃣ Open in Browser
 
-* Go to:
+Go to:
 
 ```
 http://localhost:3000
